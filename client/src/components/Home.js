@@ -8,7 +8,7 @@ function Home() {
   useEffect(() => {
     const fetchRestaurants = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/restaurants');
+        const response = await fetch('/restaurants');
         const data = await response.json();
         setRestaurants(data);
       } catch (error) {
@@ -27,7 +27,7 @@ function Home() {
             <p>Restaurant: {restaurant.name}</p>
             <p>Address: {restaurant.address}</p>
           </div>
-          <Link to={`/restaurants/${restaurant.id}`} className="restaurant-link">
+          <Link to={`${window.location.origin}/restaurants/${restaurant.id}`} className="restaurant-link">
             View Details
           </Link>
         </div>

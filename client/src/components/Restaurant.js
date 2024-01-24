@@ -12,7 +12,7 @@ function Restaurant() {
 
   useEffect(() => {
     const fetchRestaurantById = () => {
-      fetch(`http://127.0.0.1:5000/restaurants/${id}`)
+      fetch(`/restaurants/${id}`)
         .then(response => {
           if (response.ok) {
             return response.json();

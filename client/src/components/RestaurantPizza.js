@@ -13,12 +13,12 @@ function RestaurantPizza() {
 
   useEffect(() => {
     // Fetch all available pizzas
-    fetch("http://127.0.0.1:5000/pizzas")
+    fetch("/pizzas")
       .then((r) => r.json())
       .then(setPizzas);
 
     // Fetch all available restaurants
-    fetch("http://127.0.0.1:5000/restaurants")
+    fetch("/restaurants")
       .then((r) => r.json())
       .then(setRestaurants);
   }, []);
@@ -31,7 +31,7 @@ function RestaurantPizza() {
       quantity,
     };
 
-    fetch("http://127.0.0.1:5000/restaurant_pizzas", {
+    fetch("/restaurant_pizzas", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
